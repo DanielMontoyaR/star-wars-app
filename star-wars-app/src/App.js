@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react'
 import Alert from './Alert';
+import React from 'react'
+import logo from './logo.svg';
+
+import Starwarspeople from './Starwarspeople'
 
 export default class App extends React.Component{
   constructor(props){
@@ -10,6 +12,8 @@ export default class App extends React.Component{
       counter:0
     }
   }
+
+
   componentDidMount(){
     setInterval(()=>{
       this.setState({
@@ -17,8 +21,9 @@ export default class App extends React.Component{
       });
     },1000)
   }
+
   render(){
-    return(
+    return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
@@ -33,8 +38,11 @@ export default class App extends React.Component{
           </a>
           <div>{this.state.counter}</div>
           <Alert count={this.state.counter}></Alert>
+          <div><Starwarspeople/></div>
         </header>
       </div>
+
+    
     );
   }
 }
